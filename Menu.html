@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+img{
+    border-radius: 50%;
+    height:10CAP;
+}
+header{
+    background-color:#1fc47f;
+    top: 0%;
+    right: 0%;
+    left: 0%;
+    position: sticky;
+    padding: 10px 20px;
+}
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.nav-logo {
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.nav-right a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: background 0.3s, transform 0.2s;
+}
+.nav-right a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+    text-decoration: none;
+}
+.nav-right #acc{
+    height: 28px !important;
+    width: 28px !important;
+    margin: 0;
+    border-radius: 50%;
+}
+.nav-right #acc1{
+    height: 26px !important;
+    width: 26px !important;
+    margin: 0;
+    border-radius: 5px;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+    margin-right: 4.5cap;
+    font-size: 3cap;
+    text-align: center;
+    
+}
+
+.search{
+    --padding:24px;
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    border-radius: 28px;
+    background-color: #f6f6f6;
+    transition: box-shadow 0.25s;
+    width: 350px;
+    height: 50px;
+   
+}
+
+.search:hover{
+     border: 2.5px solid black;
+}
+.search:focus-within{
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+}
+
+.search-input{
+    font-size: 19px;
+    font-family: 'lexend', sans-serif;
+    color: #333;
+    margin-left: var(--padding);
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 200px;
+}
+.menu{
+    text-decoration: underline;
+     color:#085c2e;
+}
+
+.search-input::placeholder,
+.search-icon{
+    color: rgba(0, 0, 0, 0.25);
+}
+#acc{
+    height: 4.5cap;
+    margin-left: 5cap
+}
+.div00{
+     background-color:white;
+     text-align: center;
+            display:inline-block;
+            min-height: 250px;
+            height: 460px;
+            width: 403px;
+            margin: 20px;
+            border-radius: 10%;
+            overflow: auto;
+            font-size: 25px;
+            color:#1fc47f;
+            background-color: #11bd0b50;
+            align-items: center;
+            text-align: center;
+            box-shadow: 5px 5px 10px green;
+}
+.div00:hover{
+    box-shadow: 5px 5px 30px #04c977;
+}
+a:hover{
+    text-decoration:underline;
+    
+}
+#nav00{
+    display: inline-block;
+    align-items: center;
+
+}
+#bull{
+    display: inline-block;
+    height: 40px;
+    width: 130px;
+    font-size: 20px;
+    color: #1fc47f;
+    border: 6cap;
+    border-radius: 50px;
+    margin-top: 30px;
+   
+   
+}
+
+#bull:hover{
+   
+    border: 3px solid #1fc47f;
+}
+h3{
+    margin-top: 10px;
+}
+p{
+    margin-top: 15px;
+}
+
+
+
+</style>
+    <title>MENU</title>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+</head>
+<body>
+     <header><div id="navbar">
+        <img src="Endless logo.png" alt="Endless Coffee" class="nav-logo">
+        <div class="nav-links">
+            <a href="Home.html">Home</a>
+            <a href="Menu.html" class="menu">Menu</a>
+            <a href="gift.html">Voucher</a>
+            <a href="About.html">About Us</a>
+            <a href="Contact.html">Contact Us</a>
+        </div>
+        <div class="nav-right">
+            <div class="search"> 
+                <span class="search-icon material-symbols-outlined">search</span>
+                <input class="search-input" type="search" placeholder="search">
+            </div>
+            <a href="Login.html"><img id="acc" src="logo acc.png" alt="Account"></a>
+            <a href="Cart.html"><img id="acc1" src="add card.img.png" alt="Cart"></a>
+        </div>
+    </div></header>
+
+<nav id="nav00"> 
+    <center>
+    <div class="div00"><img src="Cappuccino.img.png" alt="coffee.img12"><h3>Cappuccion Coffee</h3><p>A classic italian coffee drink made with esspresso, steamed milk and milk foam.</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00"><img src="americano.img.png" alt="coffee.img12"><h3>americano Coffee</h3><p>An espresso-based coffee that is diluted with hot water.</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00"><img src="Black Coffee.img.png" alt="coffee.img12"><h3>Black Coffee</h3><p>Black coffee is bewed without adding milk, cream, sugar or other flavoring.</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00"><img src="Cafe au lait.img.png" alt="coffee.img12"><h3>Cafe au lait</h3><p>A French coffee drink that combines equal parts brewed coffee and steamed milk.</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00"><img src="Affogato Coffee.img.png" alt="coffee.img12"><h3>Affogato Coffee</h3><p>An italian dessert that combines a scoop of gelato or ice cream with hot espresso.</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00"><img src="Espresso Coffee.img.png" alt="coffee.img12"><h3>Espresso Coffee</h3><p>A concentrated coffee that's brewed by forcing hot water through finely ground coffee beans under high pressure.</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00"><img src="Mocha Coffee.img.png" alt="coffee.img12"><h3>Mocha Coffee</h3><p>A specialty drink that combines espresso, steamed milk, chocolate syrup and whippen cream.</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00"><img src="Iced Coffee.img.png" alt="coffee.img12"><h3>Iced Coffee</h3><p>Brewed coffee that's cooled down and served over ice. it can be made using any brewing method.</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00"><img src="Frappe.img.png" alt="coffee.img12"><h3>Frappe Coffee</h3><p>A Greek iced coffee drink made with instant coffee, milk, suger and ice cubes.</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00"><img src="Cold Brew Coffee.img.png" alt="coffee.img12"><h3>Cold Brew Coffee</h3><p>Cold brew coffee is brewed by steeping coarsely ground coffee beans in cold water for an extended period of time.</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00"><img src="Cornado Coffee.img.png" alt="coffee.img12"><h3>Cornado Coffee</h3><p>A Spanish coffee drink consisting of equal parts espresso and steamed milk.</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00"><img src="Irish Coffee.img.png" alt="coffee.img12"><h3>Irish Coffee</h3><p>A hot coffee drink that combines Irish whiskey, coffee, sugar, and whipped cream.</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00"><img src="coffee img1.png" alt="img 1" id="img01"><h4>Iced Coffee Frappe</h4><p>An iced coffee frappé is a blended, chilled coffee drink that is typically made with strong coffee, milk, sugar, and ice, often with whipped cream and other toppings.</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00"> <img src="coffee img 2.png" alt="img2" id="img01"><h4>Hazelnut Milk Shake</h4><p>A hazelnut milkshake is a creamy beverage typically made with milk, ice cream, and hazelnut flavor, often enhanced with chocolate or other ingredients.</p><center><button id="bull">Add to Card;</button></center></div>
+    <div class="div00"><img src="Coffee img 3.png" alt="img3" id="img01"><h4>Chocolate Shake</h4><p>A drink made of milk and ice cream and a flavour such as fruit or chocolate, mixed together until it is smooth</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00"><img src="Coffee img 4.png" alt="img4" id="img01"><h4>Kesar Pista Milk Shake</h4><p>Kesar Pista Milk Shake is a popular Indian beverage made with milk, saffron (Kesar), and pistachios (Pista).</p><center><button id="bull">Add to Caed</button></center></div>
+    </center>
+</nav>
+
+
+
+</body>
+</html>

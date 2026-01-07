@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Coffee - Endless Coffee Shop</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        img{
+            border-radius: 50%;
+            height:10CAP;
+        }
+        header{
+            background-color:#1fc47f;
+            top: 0%;
+            right: 0%;
+            left: 0%;
+            position: sticky;
+            padding: 10px 20px;
+        }
+        #navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .nav-logo {
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-grow: 1;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .nav-right a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .nav-right a:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+            text-decoration: none;
+        }
+        .nav-right #acc{
+            height: 28px !important;
+            width: 28px !important;
+            margin: 0;
+            border-radius: 50%;
+        }
+        .nav-right #acc1{
+            height: 26px !important;
+            width: 26px !important;
+            margin: 0;
+            border-radius: 5px;
+        }
+        .menu{
+            text-decoration: underline;
+            color:#085c2e;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+            margin-right: 4.5cap;
+            font-size: 3cap;
+            text-align: center;
+        }
+        a:hover{
+            text-decoration:underline;
+        }
+
+        .search{
+            --padding:24px;
+            display: flex;
+            align-items: center;
+            padding: var(--padding);
+            border-radius: 28px;
+            background-color: #f6f6f6;
+            transition: box-shadow 0.25s;
+            width: 350px;
+            height: 50px;
+        }
+
+        .search:hover{
+            border: 2.5px solid black;
+        }
+        .search:focus-within{
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+        }
+
+        .search-input{
+            font-size: 19px;
+            font-family: 'lexend', sans-serif;
+            color: #333;
+            margin-left: var(--padding);
+            outline: none;
+            border: none;
+            background: transparent;
+            width: 200px;
+        }
+
+        .search-input::placeholder,
+        .search-icon{
+            color: rgba(0, 0, 0, 0.25);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #1fc47f 0%, #085c2e 100%);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+        }
+        .hero-section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+        }
+        .hero-section p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Coffee Content */
+        .coffee-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .coffee-story {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .coffee-story:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .coffee-story img {
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        .coffee-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .coffee-text h2 {
+            font-size: 32px;
+            color: #085c2e;
+            margin-bottom: 15px;
+            font-family: 'Georgia', serif;
+        }
+        .coffee-text p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* Coffee Types Section */
+        .coffee-types {
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+        }
+        .coffee-types h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #085c2e;
+            margin-bottom: 40px;
+        }
+        .types-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .type-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .type-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(31, 196, 127, 0.3);
+        }
+        .type-card h3 {
+            font-size: 22px;
+            color: #1fc47f;
+            margin-bottom: 10px;
+        }
+        .type-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1fc47f;
+            padding: 40px 20px;
+        }
+        #dd1 {
+            text-align: center;
+            display: inline-block;
+            background-color: #1fc47f;
+            min-height: 250px;
+            height: 299px;
+            width: 280px;
+            margin-top: 20px;
+            border-radius: 10%;
+            overflow: auto;
+            font-size: 25px;
+            padding: 0%;
+        }
+        #logo2 {
+            display: inline-block;
+            height: 60px;
+            margin: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+</head>
+<body>
+    <header><div id="navbar">
+        <img src="Endless logo.png" alt="Endless Coffee" class="nav-logo">
+        <div class="nav-links">
+            <a href="Home.html">Home</a>
+            <a href="Menu.html">Menu</a>
+            <a href="gift.html">Voucher</a>
+            <a href="About.html" class="menu">About Us</a>
+            <a href="Contact.html">Contact Us</a>
+        </div>
+        <div class="nav-right">
+            <div class="search"> 
+                <span class="search-icon material-symbols-outlined">search</span>
+                <input class="search-input" type="search" placeholder="search">
+            </div>
+            <a href="Login.html"><img id="acc" src="logo acc.png" alt="Account"></a>
+            <a href="Cart.html"><img id="acc1" src="add card.img.png" alt="Cart"></a>
+        </div>
+    </div></header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>☕ Our Coffee</h1>
+        <p>At Endless Coffee Shop, we believe that great coffee starts with exceptional beans. Our carefully curated selection represents the finest coffee from around the world, roasted with passion and served with love.</p>
+    </section>
+
+    <!-- Coffee Content -->
+    <section class="coffee-content">
+        <div class="coffee-story">
+            <img src="cof img.jpg" alt="Coffee Beans" style="border-radius: 20px;">
+            <div class="coffee-text">
+                <h2>🌱 Our Sourcing</h2>
+                <p>We partner directly with small-scale farmers across Ethiopia, Colombia, Brazil, and Indonesia. Each relationship is built on trust, fair trade practices, and a shared commitment to quality. Our beans are handpicked at peak ripeness, ensuring only the finest cherries make it into your cup.</p>
+            </div>
+        </div>
+
+        <div class="coffee-story">
+            <img src="template.jpg" alt="Roasting" style="border-radius: 20px;">
+            <div class="coffee-text">
+                <h2>🔥 The Art of Roasting</h2>
+                <p>Our master roasters bring decades of experience to every batch. Using small-batch roasting techniques, we unlock the unique flavor profiles hidden within each bean. From light and fruity to dark and bold, every roast is crafted to perfection.</p>
+            </div>
+        </div>
+
+        <div class="coffee-story">
+            <img src="half.img.jpg" alt="Brewing" style="border-radius: 20px;">
+            <div class="coffee-text">
+                <h2>✨ Freshness Guaranteed</h2>
+                <p>We roast our beans in small batches multiple times a week, ensuring that every cup you enjoy is at its peak freshness. From roaster to cup in days, not months — that's the Endless promise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coffee Types Section -->
+    <section class="coffee-types">
+        <h2>Our Coffee Varieties</h2>
+        <div class="types-grid">
+            <div class="type-card">
+                <h3>Arabica</h3>
+                <p>Known for its smooth, complex flavor with hints of fruit and sugar. Our signature choice for espresso-based drinks.</p>
+            </div>
+            <div class="type-card">
+                <h3>Robusta</h3>
+                <p>Bold and strong with a deep, earthy taste. Perfect for those who love a powerful caffeine kick.</p>
+            </div>
+            <div class="type-card">
+                <h3>Single Origin</h3>
+                <p>Experience the unique terroir of each region. From Ethiopian Yirgacheffe to Colombian Supremo.</p>
+            </div>
+            <div class="type-card">
+                <h3>House Blend</h3>
+                <p>Our signature blend combining beans from three continents for a perfectly balanced cup every time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <nav class="footer">
+        <center>
+            <div id="dd1"><a href="About.html" style="font-size: 25px;"> About Us </a><br><br><a href="Our  Campany.html" style="font-size: 25px;">Our Campany </a> <br><br><a href="Our Coffee.html" style="font-size: 25px;">Our Coffee </a><br> <br><a href="Story.html" style="font-size: 25px;">Story </a><br><br><a href="job.html" style="font-size: 25px;"> Job</a></div>
+            <div id="dd1"> <a href="policy.html" style="font-size: 25px;">Our Policy </a><br><br> <a href="terms.html" style="font-size: 25px;">Terms & Conditions</a> <br><br> <a href="privacy.html" style="font-size: 25px;">Privacy Policy</a></div>
+            <div id="dd1"> <b>Follow Us</b> <br><br> <a href="https://www.instagram.com/pitambar_tiwari__?igsh=eDh3ZmVpdzczNTAw" style="height: 60px; margin: 10px;"><img id="logo2" src="insta logo.png" alt="insta logo"></a> <a href="https://www.instagram.com/pitambar_tiwari__?igsh=eDh3ZmVpdzczNTAw" style="height: 60px; margin: 10px;"> <img id="logo2" src="face book logo.png" alt="facebook logo"></a></div>
+        </center>    
+    </nav>
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+body{
+text-align: center;
+background-color: #03011d;
+ color:rgb(185, 111, 255);
+}
+
+img{
+    border-radius: 70%;    
+}
+
+#heading1{
+    color: rgb(179, 122, 18);
+}
+
+#heading3{
+    color: rgb(194, 27, 27);
+}
+
+#h4{
+    color: aqua;
+}
+#head3{
+    color:rgb(17, 133, 61);
+}
+
+#but{
+    color: rgb(189, 23, 23);
+    background-color: rgb(46, 0, 107);
+}
+
