@@ -131,25 +131,29 @@ nav
 } 
 #coffeeimg{
     background-color:white;
-     text-align: center;
-            display:inline-block;
-            min-height: 250px;
-            height: 300px;
-            width: 330px;
-            margin: 50px;
-            border-radius: 10%;
-            overflow: auto;
-            font-size: 25px;
-            color:#1fc47f;
-
+    text-align: center;
+    display: inline-block;
+    min-height: 200px;
+    height: 280px;
+    width: 220px;
+    margin: 15px;
+    border-radius: 10%;
+    overflow: hidden;
+    font-size: 18px;
+    color:#1fc47f;
 }
 
 #img00{
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    padding: 20px 10px;
 }
 #img01{
-    height: 200px;
-
+    height: 180px;
+    border-radius: 10%;
 }
 #bull{
     display: inline-block;
