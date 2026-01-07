@@ -177,7 +177,13 @@ h3{
 p{
     margin-top: 15px;
 }
-
+.price {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    color: #085c2e;
+    margin-top: 10px;
+}
 
 
 </style>
@@ -200,23 +206,23 @@ p{
                 <input class="search-input" type="search" placeholder="search">
             </div>
             <a href="Login.html"><img id="acc" src="logo acc.png" alt="Account"></a>
-            <a href="Cart.html"><img id="acc1" src="add card.img.png" alt="Cart"></a>
+            <a href="Cart.html" style="position: relative;"><img id="acc1" src="add card.img.png" alt="Cart"><span id="cart-badge" style="position: absolute; top: -5px; right: -5px; background: #ff4757; color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 11px; display: none; align-items: center; justify-content: center; font-weight: bold;">0</span></a>
         </div>
     </div></header>
 
 <nav id="nav00"> 
     <center>
-    <div class="div00"><img src="Cappuccino.img.png" alt="coffee.img12"><h3>Cappuccion Coffee</h3><p>A classic italian coffee drink made with esspresso, steamed milk and milk foam.</p><center><button id="bull">Add to Card</button></center></div>
-    <div class="div00"><img src="americano.img.png" alt="coffee.img12"><h3>americano Coffee</h3><p>An espresso-based coffee that is diluted with hot water.</p><center><button id="bull">Add to Card</button></center></div>
-    <div class="div00"><img src="Black Coffee.img.png" alt="coffee.img12"><h3>Black Coffee</h3><p>Black coffee is bewed without adding milk, cream, sugar or other flavoring.</p><center><button id="bull">Add to Card</button></center></div>
-    <div class="div00"><img src="Cafe au lait.img.png" alt="coffee.img12"><h3>Cafe au lait</h3><p>A French coffee drink that combines equal parts brewed coffee and steamed milk.</p><center><button id="bull">Add to Card</button></center></div>
-    <div class="div00"><img src="Affogato Coffee.img.png" alt="coffee.img12"><h3>Affogato Coffee</h3><p>An italian dessert that combines a scoop of gelato or ice cream with hot espresso.</p><center><button id="bull">Add to Card</button></center></div>
-    <div class="div00"><img src="Espresso Coffee.img.png" alt="coffee.img12"><h3>Espresso Coffee</h3><p>A concentrated coffee that's brewed by forcing hot water through finely ground coffee beans under high pressure.</p><center><button id="bull">Add to Card</button></center></div>
-    <div class="div00"><img src="Mocha Coffee.img.png" alt="coffee.img12"><h3>Mocha Coffee</h3><p>A specialty drink that combines espresso, steamed milk, chocolate syrup and whippen cream.</p><center><button id="bull">Add to Card</button></center></div>
-    <div class="div00"><img src="Iced Coffee.img.png" alt="coffee.img12"><h3>Iced Coffee</h3><p>Brewed coffee that's cooled down and served over ice. it can be made using any brewing method.</p><center><button id="bull">Add to Card</button></center></div>
-    <div class="div00"><img src="Frappe.img.png" alt="coffee.img12"><h3>Frappe Coffee</h3><p>A Greek iced coffee drink made with instant coffee, milk, suger and ice cubes.</p><center><button id="bull">Add to Card</button></center></div>
-    <div class="div00"><img src="Cold Brew Coffee.img.png" alt="coffee.img12"><h3>Cold Brew Coffee</h3><p>Cold brew coffee is brewed by steeping coarsely ground coffee beans in cold water for an extended period of time.</p><center><button id="bull">Add to Card</button></center></div>
-    <div class="div00"><img src="Cornado Coffee.img.png" alt="coffee.img12"><h3>Cornado Coffee</h3><p>A Spanish coffee drink consisting of equal parts espresso and steamed milk.</p><center><button id="bull">Add to Card</button></center></div>
+    <div class="div00" data-id="cappuccino" data-name="Cappuccino Coffee" data-price="199" data-image="Cappuccino.img.png"><img src="Cappuccino.img.png" alt="coffee"><h3>Cappuccino Coffee</h3><p>A classic italian coffee drink made with espresso, steamed milk and milk foam.</p><span class="price">₹199</span><center><button id="bull">Add to Cart</button></center></div>
+    <div class="div00" data-id="americano" data-name="Americano Coffee" data-price="149" data-image="americano.img.png"><img src="americano.img.png" alt="coffee"><h3>Americano Coffee</h3><p>An espresso-based coffee that is diluted with hot water.</p><span class="price">₹149</span><center><button id="bull">Add to Cart</button></center></div>
+    <div class="div00" data-id="black-coffee" data-name="Black Coffee" data-price="129" data-image="Black Coffee.img.png"><img src="Black Coffee.img.png" alt="coffee"><h3>Black Coffee</h3><p>Black coffee is brewed without adding milk, cream, sugar or other flavoring.</p><span class="price">₹129</span><center><button id="bull">Add to Cart</button></center></div>
+    <div class="div00" data-id="cafe-au-lait" data-name="Cafe au lait" data-price="179" data-image="Cafe au lait.img.png"><img src="Cafe au lait.img.png" alt="coffee"><h3>Cafe au lait</h3><p>A French coffee drink that combines equal parts brewed coffee and steamed milk.</p><span class="price">₹179</span><center><button id="bull">Add to Cart</button></center></div>
+    <div class="div00" data-id="affogato" data-name="Affogato Coffee" data-price="249" data-image="Affogato Coffee.img.png"><img src="Affogato Coffee.img.png" alt="coffee"><h3>Affogato Coffee</h3><p>An italian dessert that combines gelato with hot espresso.</p><span class="price">₹249</span><center><button id="bull">Add to Cart</button></center></div>
+    <div class="div00" data-id="espresso" data-name="Espresso Coffee" data-price="159" data-image="Espresso Coffee.img.png"><img src="Espresso Coffee.img.png" alt="coffee"><h3>Espresso Coffee</h3><p>A concentrated coffee brewed by forcing hot water through finely ground coffee beans.</p><span class="price">₹159</span><center><button id="bull">Add to Cart</button></center></div>
+    <div class="div00" data-id="mocha" data-name="Mocha Coffee" data-price="219" data-image="Mocha Coffee.img.png"><img src="Mocha Coffee.img.png" alt="coffee"><h3>Mocha Coffee</h3><p>A specialty drink combining espresso, milk, chocolate syrup and whipped cream.</p><span class="price">₹219</span><center><button id="bull">Add to Cart</button></center></div>
+    <div class="div00" data-id="iced-coffee" data-name="Iced Coffee" data-price="189" data-image="Iced Coffee.img.png"><img src="Iced Coffee.img.png" alt="coffee"><h3>Iced Coffee</h3><p>Brewed coffee cooled down and served over ice.</p><span class="price">₹189</span><center><button id="bull">Add to Cart</button></center></div>
+    <div class="div00" data-id="frappe" data-name="Frappe Coffee" data-price="209" data-image="Frappe.img.png"><img src="Frappe.img.png" alt="coffee"><h3>Frappe Coffee</h3><p>A Greek iced coffee drink made with instant coffee, milk and ice.</p><span class="price">₹209</span><center><button id="bull">Add to Cart</button></center></div>
+    <div class="div00" data-id="cold-brew" data-name="Cold Brew Coffee" data-price="199" data-image="Cold Brew Coffee.img.png"><img src="Cold Brew Coffee.img.png" alt="coffee"><h3>Cold Brew Coffee</h3><p>Coffee brewed by steeping beans in cold water for extended time.</p><span class="price">₹199</span><center><button id="bull">Add to Cart</button></center></div>
+    <div class="div00" data-id="cornado" data-name="Cornado Coffee" data-price="169" data-image="Cornado Coffee.img.png"><img src="Cornado Coffee.img.png" alt="coffee"><h3>Cornado Coffee</h3><p>A Spanish coffee drink with equal parts espresso and steamed milk.</p><span class="price">₹169</span><center><button id="bull">Add to Cart</button></center></div>
     <div class="div00"><img src="Irish Coffee.img.png" alt="coffee.img12"><h3>Irish Coffee</h3><p>A hot coffee drink that combines Irish whiskey, coffee, sugar, and whipped cream.</p><center><button id="bull">Add to Card</button></center></div>
     <div class="div00"><img src="coffee img1.png" alt="img 1" id="img01"><h4>Iced Coffee Frappe</h4><p>An iced coffee frappé is a blended, chilled coffee drink that is typically made with strong coffee, milk, sugar, and ice, often with whipped cream and other toppings.</p><center><button id="bull">Add to Card</button></center></div>
     <div class="div00"> <img src="coffee img 2.png" alt="img2" id="img01"><h4>Hazelnut Milk Shake</h4><p>A hazelnut milkshake is a creamy beverage typically made with milk, ice cream, and hazelnut flavor, often enhanced with chocolate or other ingredients.</p><center><button id="bull">Add to Card;</button></center></div>
@@ -225,7 +231,26 @@ p{
     </center>
 </nav>
 
-
+<script src="cart.js"></script>
+<script>
+// Add to cart functionality
+document.querySelectorAll('#bull').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const card = this.closest('.div00');
+        if (card && card.dataset.id) {
+            const item = {
+                id: card.dataset.id,
+                name: card.dataset.name,
+                price: parseInt(card.dataset.price),
+                image: card.dataset.image
+            };
+            CartManager.addToCart(item);
+            CartManager.showNotification(item.name + ' added to cart!');
+        }
+    });
+});
+</script>
 
 </body>
 </html>

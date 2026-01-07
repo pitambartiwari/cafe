@@ -407,80 +407,95 @@ a:hover{
         </div>
 
         <div class="cart-content">
-            <div class="cart-items">
-                <!-- Cart Item 1 -->
-                <div class="cart-item">
-                    <img src="Cappuccino.img.png" alt="Cappuccino">
-                    <div class="item-details">
-                        <h3>Cappuccino Coffee</h3>
-                        <p>Classic Italian coffee with steamed milk</p>
-                        <span class="item-price">₹199</span>
-                    </div>
-                    <div class="quantity-control">
-                        <button class="quantity-btn">-</button>
-                        <span class="quantity">2</span>
-                        <button class="quantity-btn">+</button>
-                    </div>
-                    <button class="remove-btn">Remove</button>
-                </div>
-
-                <!-- Cart Item 2 -->
-                <div class="cart-item">
-                    <img src="Mocha Coffee.img.png" alt="Mocha">
-                    <div class="item-details">
-                        <h3>Mocha Coffee</h3>
-                        <p>Espresso with chocolate and whipped cream</p>
-                        <span class="item-price">₹249</span>
-                    </div>
-                    <div class="quantity-control">
-                        <button class="quantity-btn">-</button>
-                        <span class="quantity">1</span>
-                        <button class="quantity-btn">+</button>
-                    </div>
-                    <button class="remove-btn">Remove</button>
-                </div>
-
-                <!-- Cart Item 3 -->
-                <div class="cart-item">
-                    <img src="Frappe.img.png" alt="Frappe">
-                    <div class="item-details">
-                        <h3>Frappe Coffee</h3>
-                        <p>Greek iced coffee with milk and sugar</p>
-                        <span class="item-price">₹179</span>
-                    </div>
-                    <div class="quantity-control">
-                        <button class="quantity-btn">-</button>
-                        <span class="quantity">1</span>
-                        <button class="quantity-btn">+</button>
-                    </div>
-                    <button class="remove-btn">Remove</button>
-                </div>
+            <div class="cart-items" id="cart-items-container">
+                <!-- Items will be rendered dynamically -->
             </div>
 
             <!-- Cart Summary -->
             <div class="cart-summary">
                 <h2>Order Summary</h2>
                 <div class="summary-row">
-                    <span>Subtotal (4 items)</span>
-                    <span>₹826</span>
+                    <span id="subtotal-label">Subtotal (0 items)</span>
+                    <span id="subtotal-value">₹0</span>
                 </div>
                 <div class="summary-row">
                     <span>Delivery Fee</span>
-                    <span>₹50</span>
-                </div>
-                <div class="summary-row">
-                    <span>Discount</span>
-                    <span style="color: #1fc47f;">-₹76</span>
+                    <span id="delivery-fee">₹50</span>
                 </div>
                 <div class="summary-total">
                     <span>Total</span>
-                    <span>₹800</span>
+                    <span id="total-value">₹50</span>
                 </div>
-                <button class="checkout-btn">Proceed to Checkout</button>
+                <button class="checkout-btn" onclick="alert('Thank you for your order! 🎉')">Proceed to Checkout</button>
                 <a href="Menu.html" class="continue-shopping">← Continue Shopping</a>
             </div>
         </div>
     </div>
+
+<script src="cart.js"></script>
+<script>
+function renderCart() {
+    const container = document.getElementById('cart-items-container');
+    const cart = CartManager.getCart();
+    
+    if (cart.length === 0) {
+        container.innerHTML = `
+            <div class="empty-cart">
+                <h2>Your cart is empty</h2>
+                <p>Add some delicious coffee from our menu!</p>
+                <a href="Menu.html" class="shop-now-btn">Shop Now</a>
+            </div>
+        `;
+        updateSummary(0, 0);
+        return;
+    }
+    
+    let html = '';
+    cart.forEach(item => {
+        html += `
+            <div class="cart-item" data-id="${item.id}">
+                <img src="${item.image}" alt="${item.name}">
+                <div class="item-details">
+                    <h3>${item.name}</h3>
+                    <span class="item-price">₹${item.price}</span>
+                </div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQty('${item.id}', -1)">-</button>
+                    <span class="quantity">${item.quantity}</span>
+                    <button class="quantity-btn" onclick="changeQty('${item.id}', 1)">+</button>
+                </div>
+                <button class="remove-btn" onclick="removeItem('${item.id}')">Remove</button>
+            </div>
+        `;
+    });
+    container.innerHTML = html;
+    
+    const itemCount = CartManager.getCartCount();
+    const subtotal = CartManager.getCartTotal();
+    updateSummary(itemCount, subtotal);
+}
+
+function updateSummary(itemCount, subtotal) {
+    document.getElementById('subtotal-label').textContent = `Subtotal (${itemCount} items)`;
+    document.getElementById('subtotal-value').textContent = `₹${subtotal}`;
+    const delivery = subtotal > 0 ? 50 : 0;
+    document.getElementById('delivery-fee').textContent = `₹${delivery}`;
+    document.getElementById('total-value').textContent = `₹${subtotal + delivery}`;
+}
+
+function changeQty(id, change) {
+    CartManager.updateQuantity(id, change);
+    renderCart();
+}
+
+function removeItem(id) {
+    CartManager.removeFromCart(id);
+    renderCart();
+}
+
+// Render cart on page load
+renderCart();
+</script>
 
 </body>
 </html>
