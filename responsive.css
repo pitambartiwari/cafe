@@ -1,0 +1,287 @@
+/* ================================
+   Responsive CSS for Cafe Website
+   ================================ */
+
+/* Hamburger Menu Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    border: none;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu a {
+    color: white !important;
+    font-size: 24px !important;
+    margin: 0 !important;
+}
+
+.mobile-menu .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* ================================
+   Tablet Breakpoint (768px)
+   ================================ */
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    .nav-links {
+        display: none !important;
+    }
+    
+    .hamburger {
+        display: flex !important;
+    }
+    
+    #navbar {
+        justify-content: space-between;
+    }
+    
+    /* Search Bar */
+    .search {
+        width: 200px !important;
+        height: 40px !important;
+        padding: 10px !important;
+    }
+    
+    .search-input {
+        font-size: 14px !important;
+        width: 120px !important;
+    }
+    
+    /* Menu Cards */
+    .div00 {
+        width: calc(50% - 20px) !important;
+        margin: 10px !important;
+        height: auto !important;
+        min-height: 380px !important;
+    }
+    
+    #nav00, nav#nav00 {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+    
+    /* Footer Sections */
+    #dd1 {
+        width: 45% !important;
+        margin: 10px !important;
+        height: auto !important;
+        min-height: 200px !important;
+    }
+    
+    /* About Page Content */
+    .dd1 {
+        width: 100% !important;
+        font-size: 20px !important;
+        height: auto !important;
+        padding: 20px !important;
+    }
+    
+    .form0 {
+        width: calc(50% - 40px) !important;
+        margin: 20px !important;
+    }
+    
+    /* Cart Styles */
+    .cart-content {
+        flex-direction: column !important;
+    }
+    
+    .cart-items, .cart-summary {
+        width: 100% !important;
+        min-width: auto !important;
+    }
+    
+    .cart-summary {
+        position: static !important;
+    }
+}
+
+/* ================================
+   Mobile Breakpoint (480px)
+   ================================ */
+@media screen and (max-width: 480px) {
+    /* Header */
+    header {
+        padding: 10px !important;
+    }
+    
+    .nav-logo {
+        height: 40px !important;
+        margin-right: 10px !important;
+    }
+    
+    /* Search Bar - Smaller */
+    .search {
+        width: 150px !important;
+        height: 36px !important;
+        padding: 8px 12px !important;
+    }
+    
+    .search-input {
+        font-size: 12px !important;
+        width: 80px !important;
+        margin-left: 8px !important;
+    }
+    
+    /* Nav Right Icons */
+    .nav-right {
+        gap: 6px !important;
+    }
+    
+    .nav-right a {
+        padding: 5px !important;
+    }
+    
+    .nav-right #acc, .nav-right #acc1 {
+        height: 22px !important;
+        width: 22px !important;
+    }
+    
+    /* Menu Cards - Single Column */
+    .div00 {
+        width: calc(100% - 20px) !important;
+        margin: 10px !important;
+    }
+    
+    .div00 img {
+        height: 120px !important;
+    }
+    
+    /* Home Page Coffee Images */
+    #coffeeimg {
+        width: calc(50% - 20px) !important;
+        height: auto !important;
+        min-height: 180px !important;
+        margin: 10px !important;
+    }
+    
+    #img00 {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+    
+    #img01 {
+        height: 100px !important;
+    }
+    
+    /* Footer - Stack Vertically */
+    #dd1 {
+        width: calc(100% - 20px) !important;
+        margin: 10px !important;
+    }
+    
+    /* About Page */
+    .navbb {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .dd img {
+        height: 200px !important;
+    }
+    
+    .form0 {
+        width: calc(100% - 20px) !important;
+        margin: 10px !important;
+    }
+    
+    .form0 img {
+        height: 200px !important;
+        width: calc(100% - 20px) !important;
+    }
+    
+    /* Cart Page */
+    .cart-header h1 {
+        font-size: 28px !important;
+    }
+    
+    .cart-item {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    .cart-item img {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    
+    .quantity-control {
+        justify-content: center !important;
+    }
+    
+    /* Page Title */
+    #dd0 {
+        font-size: 32px !important;
+        padding: 15px !important;
+    }
+    
+    /* Buttons */
+    #bull {
+        height: 35px !important;
+        width: 110px !important;
+        font-size: 16px !important;
+    }
+}
+
+/* ================================
+   Very Small Screens (360px)
+   ================================ */
+@media screen and (max-width: 360px) {
+    .search {
+        width: 120px !important;
+    }
+    
+    .search-input {
+        width: 60px !important;
+    }
+    
+    #coffeeimg {
+        width: calc(100% - 20px) !important;
+    }
+    
+    .cart-header h1 {
+        font-size: 24px !important;
+    }
+}

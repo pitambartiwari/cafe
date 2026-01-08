@@ -130,12 +130,12 @@ a{
      text-align: center;
             display:inline-block;
             min-height: 250px;
-            height: 460px;
-            width: 403px;
-            margin: 20px;
+            height: 400px;
+            width: 280px;
+            margin: 10px;
             border-radius: 10%;
             overflow: auto;
-            font-size: 25px;
+            font-size: 20px;
             color:#1fc47f;
             background-color: #11bd0b50;
             align-items: center;
@@ -188,13 +188,31 @@ p{
 
 </style>
     <title>MENU</title>
+     <link rel="stylesheet" href="responsive.css">
      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
 </head>
 <body>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" onclick="toggleMobileMenu()">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="Menu.html">Menu</a>
+        <a href="gift.html">Voucher</a>
+        <a href="About.html">About Us</a>
+        <a href="Contact.html">Contact Us</a>
+        <a href="Login.html">Account</a>
+        <a href="Cart.html">Cart</a>
+    </div>
+
      <header><div id="navbar">
         <img src="Endless logo.png" alt="Endless Coffee" class="nav-logo">
+        <button class="hamburger" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <div class="nav-links">
-            <a href="Home.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="Menu.html" class="menu">Menu</a>
             <a href="gift.html">Voucher</a>
             <a href="About.html">About Us</a>
@@ -249,6 +267,46 @@ document.querySelectorAll('#bull').forEach(button => {
             CartManager.showNotification(item.name + ' added to cart!');
         }
     });
+});
+
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+}
+
+// Search functionality
+const searchInput = document.querySelector('.search-input');
+const menuItems = document.querySelectorAll('.div00');
+
+searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase().trim();
+    
+    menuItems.forEach(item => {
+        // Get product name from h3 or h4
+        const nameElement = item.querySelector('h3') || item.querySelector('h4');
+        const name = nameElement ? nameElement.textContent.toLowerCase() : '';
+        
+        // Get description from p tag
+        const descElement = item.querySelector('p');
+        const description = descElement ? descElement.textContent.toLowerCase() : '';
+        
+        // Check if search term matches name or description
+        if (name.includes(searchTerm) || description.includes(searchTerm)) {
+            item.style.display = 'inline-block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+});
+
+// Clear search on pressing Escape
+searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        this.value = '';
+        menuItems.forEach(item => {
+            item.style.display = 'inline-block';
+        });
+    }
 });
 </script>
 

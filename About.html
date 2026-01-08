@@ -133,33 +133,47 @@ a{
 }
 
 .dd{
-    display: inline-block;
-    margin-left: 30px;
-    margin-top: 20px;
-    width:fit-content;
-  
+    flex-shrink: 0;
 }
 .dd1{
-     display: inline-block;
-    font-size: 35px;
-    width: 1250px;
-    margin-left: 30px;
-    height: 410px;
-    margin-top: 20px;
+    flex: 1;
+    font-size: 22px;
+    padding: 20px;
     color: #16bb76;
-  
+    line-height: 1.6;
 }
 .navbb{
     display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 .form0{
     display: inline-block;
-   background-color:#11bd0b50;
-    margin: 40px;
-    align-items: center;
-    width: 735px;
-    margin-left: 95px;
+    background-color:#11bd0b50;
+    width: calc(50% - 50px);
+    max-width: 550px;
+    padding: 15px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+.form0 img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 .iim{
     text-align: left;
@@ -214,14 +228,32 @@ a:hover{
 }
 
 </style>
+    <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
 
 </head>
 <body>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" onclick="toggleMobileMenu()">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="Menu.html">Menu</a>
+        <a href="gift.html">Voucher</a>
+        <a href="About.html">About Us</a>
+        <a href="Contact.html">Contact Us</a>
+        <a href="Login.html">Account</a>
+        <a href="Cart.html">Cart</a>
+    </div>
+
      <header><div id="navbar">
         <img src="Endless logo.png" alt="Endless Coffee" class="nav-logo">
+        <button class="hamburger" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <div class="nav-links">
-            <a href="Home.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="Menu.html">Menu</a>
             <a href="gift.html">Voucher</a>
             <a href="About.html" class="menu">About Us</a>
@@ -245,10 +277,10 @@ Whether you're a casual sipper or a devoted aficionado, our mission is to provid
 </nav>
     
 <nav class="form">
-     <div class="form0"><a href="Our  Campany.html" class="iim"><img src="full.img.jpg" alt="iim1" style="border-radius: 0%; height: 400px; margin-top: 10px; margin-left: 10px;"><h1><b> Our Campany</b></h1><p class="pp">Learn more about "Our Campany"</p></a></div>
-     <div class="form0"><a href="Our Coffee.html" class="iim"><img src="full.img.jpg" alt="iim2" style="border-radius: 0%; height: 400px; margin-top: 10px; margin-left: 10px;"><h1><b>Our Coffee</b></h1><p class="pp">Learn more about "Our Coffee"</p></a></div>
-     <div class="form0"><a href="job.html" class="iim"><img src="full.img.jpg" alt="iim3" style="border-radius: 0%; height: 400px; margin-top: 10px; margin-left: 10px;"><h1><b>Job</b></h1><p class="pp">Learn more about "Job"</p></a></div>
-     <div class="form0"><a href="Story.html" class="iim"><img src="full.img.jpg" alt="iim4" style="border-radius: 0%; height: 400px; margin-top: 10px; margin-left: 10px;"><h1><b>Story</b></h1><p class="pp">Learn more about "Story"</p></a></div>
+     <div class="form0"><a href="Our  Campany.html" class="iim"><img src="full.img.jpg" alt="iim1"><h1><b> Our Campany</b></h1><p class="pp">Learn more about "Our Campany"</p></a></div>
+     <div class="form0"><a href="Our Coffee.html" class="iim"><img src="half.img.jpg" alt="iim2"><h1><b>Our Coffee</b></h1><p class="pp">Learn more about "Our Coffee"</p></a></div>
+     <div class="form0"><a href="job.html" class="iim"><img src="cof img.jpg" alt="iim3"><h1><b>Job</b></h1><p class="pp">Learn more about "Job"</p></a></div>
+     <div class="form0"><a href="Story.html" class="iim"><img src="template.jpg" alt="iim4"><h1><b>Story</b></h1><p class="pp">Learn more about "Story"</p></a></div>
 </nav>
 <nav class="bottom">
 <center>
@@ -257,5 +289,12 @@ Whether you're a casual sipper or a devoted aficionado, our mission is to provid
     <div id="dd1"> <b>Follow Us</b> <br><br> <a href="https://www.instagram.com/pitambar_tiwari__?igsh=eDh3ZmVpdzczNTAw" style="  height: 60px; margin: 10px;"><img id="logo2" src="insta logo.png" alt="insta logo"></a> <a href="https://www.instagram.com/pitambar_tiwari__?igsh=eDh3ZmVpdzczNTAw"style="  height: 60px; margin: 10px;"> <img id="logo2" src="face book logo.png" alt="facebook logo"></a></div>
 </center>    
 </nav>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+}
+</script>
 </body>
 </html>

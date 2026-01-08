@@ -153,11 +153,11 @@ a{
             font-size: 25px;
             padding: 0%;
 }
-a{
+#dd1 a{
     text-decoration: none;
     color: black;
-    margin-right: 4.5cap;
-    font-size: 3cap;
+    margin-right: 10px;
+    font-size: 18px;
     text-align: center;
 }
 a:hover{
@@ -176,14 +176,32 @@ nav
 }
 
  </style>
+    <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
 
 </head>
 <body>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" onclick="toggleMobileMenu()">&times;</button>
+        <a href="index.html">Home</a>
+        <a href="Menu.html">Menu</a>
+        <a href="gift.html">Voucher</a>
+        <a href="About.html">About Us</a>
+        <a href="Contact.html">Contact Us</a>
+        <a href="Login.html">Account</a>
+        <a href="Cart.html">Cart</a>
+    </div>
+
      <header><div id="navbar">
         <img src="Endless logo.png" alt="Endless Coffee" class="nav-logo">
+        <button class="hamburger" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <div class="nav-links">
-            <a href="Home.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="Menu.html">Menu</a>
             <a href="gift.html" class="menu">Voucher</a>
             <a href="About.html">About Us</a>
@@ -215,5 +233,12 @@ nav
     <div id="dd1"> <b>Follow Us</b> <br><br> <a href="https://www.instagram.com/pitambar_tiwari__?igsh=eDh3ZmVpdzczNTAw" style="  height: 60px; margin: 10px;"><img id="logo2" src="insta logo.png" alt="insta logo"></a> <a href="https://www.instagram.com/pitambar_tiwari__?igsh=eDh3ZmVpdzczNTAw"style="  height: 60px; margin: 10px;"> <img id="logo2" src="face book logo.png" alt="facebook logo"></a></div>
 </center>    
 </nav>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+}
+</script>
     </body>
 </html> 
